@@ -1,9 +1,11 @@
 package com.jordev.fitnesstracker
 
 import android.app.Dialog
+import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -45,18 +47,18 @@ class ImcActivity : AppCompatActivity() {
 
             val dialog = AlertDialog.Builder(this)
 
-            dialog.setTitle("Seu imc é: ")
-            dialog.setMessage(R.string.calc)
-            dialog.setPositiveButton("texto botao", object : DialogInterface.OnClickListener {
+            .setTitle(getString(R.string.imc_response, result))
+            .setMessage(imcResponseId)
+            .setPositiveButton(android.R.string.ok) { dialog, which ->
+                // Aqui vai rodar depois do click
+            }
 
-                override fun onClick(dialog: DialogInterface?, which: Int) {
-                    
-                }
+            .create()
+            .show()
 
-            })
-
-            val d = dialog.create()
-            d.show()
+            // Esconder teclado depois de digitado
+            val service = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            service.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
 
         }
     }
