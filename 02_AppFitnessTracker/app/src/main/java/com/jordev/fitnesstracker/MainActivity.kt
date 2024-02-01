@@ -5,15 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
-=======
 import android.widget.Button
-import androidx.recyclerview.widget.LinearLayoutManager
->>>>>>> origin/main
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -38,11 +34,7 @@ class MainActivity : AppCompatActivity() {
                 id = 2,
                 drawable = R.drawable.ic_self_improvement,
                 textStringId = R.string.label_tmb,
-<<<<<<< HEAD
                 color = Color.YELLOW
-=======
-                color = Color.GREEN
->>>>>>> origin/main
             )
         )
         // 01) O layout XML
@@ -91,7 +83,6 @@ class MainActivity : AppCompatActivity() {
     // É a classe da celula em si!
     private class  MainViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind(item: MainItem){
-<<<<<<< HEAD
             val img: ImageView = itemView.findViewById(R.id.item_imag_icon)
             val name: TextView = itemView.findViewById(R.id.item_txt_name)
             val container: LinearLayout = itemView.findViewById(R.id.item_container_imc)
@@ -99,11 +90,10 @@ class MainActivity : AppCompatActivity() {
             img.setImageResource(item.drawable)
             name.setText(item.textStringId)
             container.setBackgroundColor(item.color)
-=======
-            val buttonTest: Button = itemView.findViewById(R.id.btn_item)
-            buttonTest.setText(item.textStringId)
+
+//            val buttonTest: Button = itemView.findViewById(R.id.btn_item)
+//            buttonTest.setText(item.textStringId)
             //val text = item.textStringId
->>>>>>> origin/main
         }
     }
 }
