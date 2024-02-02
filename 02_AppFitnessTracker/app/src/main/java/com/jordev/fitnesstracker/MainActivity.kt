@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onClick() {
-        TODO("Not yet implemented")
+        print("A casa Caiu")
     }
 
     private inner class MainAdapter(private val mainItems: List<MainItem>) : RecyclerView.Adapter<MainViewHolder>(){
