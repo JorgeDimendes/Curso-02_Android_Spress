@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnItemClickListener {
 
     //private lateinit var btnImc: LinearLayout
     private lateinit var rvMain: RecyclerView
@@ -45,17 +45,10 @@ class MainActivity : AppCompatActivity() {
         rvMain.adapter = adapter
         rvMain.layoutManager = GridLayoutManager(this, 2)
 
-        /*// Verifica se a atividade tem uma barra de ação
-        val actionBar = supportActionBar
-        // Oculta a barra de ação
-        actionBar?.hide()
+    }
 
-       btnImc = findViewById(R.id.btn_imc)
-        btnImc.setOnClickListener {
-            // Navegar para proxima tela
-            val intent = Intent(this, ImcActivity::class.java)
-            startActivity(intent)
-        }*/
+    override fun onClick() {
+        TODO("Not yet implemented")
     }
 
     private inner class MainAdapter(private val mainItems: List<MainItem>) : RecyclerView.Adapter<MainViewHolder>(){
@@ -91,9 +84,9 @@ class MainActivity : AppCompatActivity() {
             name.setText(item.textStringId)
             container.setBackgroundColor(item.color)
 
-//            val buttonTest: Button = itemView.findViewById(R.id.btn_item)
-//            buttonTest.setText(item.textStringId)
-            //val text = item.textStringId
+            container.setOnClickListener {
+
+            }
         }
     }
 }
